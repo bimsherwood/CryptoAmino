@@ -8,22 +8,22 @@ from cryptoamino.analysis import distribution
 from cryptoamino.cipher.vigenere import *
 from cryptoamino import tools
 
-print("Heuristic tests (may take a while):")
+print("Heuristic tests:")
 
   #
   # Brute Force test, using a cipher
   #
 
-# Create a situation
+# Test case
 cipher = Vigenere(tools.add, tools.subtract)
 plaintext = tools.normalise_text(
   "abbabaabababbabbbabbababababababbbbabaaabababbabbbabababbaabababbbab")
-correct_key = "abc"
+correct_key = "ht"
 cipher.key(correct_key)
 ciphertext = tools.concat(cipher.encrypt(plaintext))
 
 # Prepare the attack
-keys = itertools.product(tools.letters, repeat=3)
+keys = itertools.product(tools.letters, repeat=2)
 quadgram_freq = distribution.freq(characterisation.quads(plaintext))
 text_fitness = characterisation.quadgram_scorer(quadgram_freq)
 def key_fitness(key):

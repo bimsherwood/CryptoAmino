@@ -1,5 +1,7 @@
 import math
 
+from cryptoamino.analysis import distribution
+
 # Compute the Chi-Squared statistic for the source frequency distribution (a
 # symbol vs. frequency dictionary) against the reference probability
 # distribution (a symbol vs. probability dictionary).
@@ -48,3 +50,14 @@ def quadgram_scorer(quadgram_freqs):
     return sequence_prob/quad_count
   
   return scorer
+
+# The probability that two distinct randomly-chosen symbols in the given
+# sequence are equal.
+def index_of_coincidence(sequence):
+  frequencies = distribution.freq(sequence)
+  sample_size = sum(frequencies.values())
+  coinciding_combinations = 0
+  for symbol, frequency in frequencies.items():
+    coinciding_combinations += frequency * (frequency - 1)
+  combinations = sample_size * (sample_size-1)
+  return coinciding_combinations / combinations

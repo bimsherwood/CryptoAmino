@@ -41,6 +41,7 @@ def zipWith(f, *streams):
     results.append(f(*heads))
 
 # For breaking a sequence into fixed-size groups
+# TODO: Make a lazy generator version
 def group(lst, size):
   groups = []
   while len(lst) > size:

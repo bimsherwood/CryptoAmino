@@ -1,1 +1,5 @@
-__all__ = ["characterisation", "distribution", "heuristic"]
+__all__ = [
+  "characterisation",
+  "distribution",
+  "heuristic",
+  "polyalphabetic"]
