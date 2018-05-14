@@ -1,3 +1,6 @@
+import math
+import random
+
 # Perform a hill climb, given:
 #   fitness:    A function to calculate a state's fitness
 #   mutate:     A function which randomly selects a mutation of the state
