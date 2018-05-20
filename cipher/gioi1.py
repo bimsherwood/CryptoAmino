@@ -26,14 +26,14 @@ class Gioi1:
     
     def decodeSecondPass(stream2):
       for hex_num in tools.group(stream2, 2):
-        yield chr(int(hex_num, 16))
+        yield chr(int(tools.concat(hex_num), 16))
         
     def decodeFirstPass(stream1):
       dec_num = []
       for symbol in stream1:
         if symbol == ' ':
           yield chr(int(tools.concat(dec_num)))
-          dec_num = []
+          dec_num.clear()
         else:
           dec_num.append(symbol)
       if len(dec_num) > 0:

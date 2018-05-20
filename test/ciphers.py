@@ -22,7 +22,12 @@ ciphers = [
   # Vigenere over lowercase letters only.
   (vigenere.Vigenere(tools.add, tools.subtract),
     "key",
-    "plaintextplaintextglorp")
+    "plaintextplaintextglorp"),
+  
+  # G.I.O.I. 1 encoding
+  (gioi1.Gioi1(),
+   None,
+   "Some ascii text will do it!")
   
 ]
 
