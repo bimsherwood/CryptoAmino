@@ -26,7 +26,7 @@ ciphers = [
   
 ]
 
-# Run all ciphersin encrypt then decrypt mode to ensure they completely undo
+# Run all ciphers in encrypt then decrypt mode to ensure they completely undo
 # themselves.
 for cipher, key, plaintext in ciphers:
   cipher.key(key)
