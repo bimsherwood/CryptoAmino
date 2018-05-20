@@ -50,6 +50,7 @@ def group(lst, size):
   groups.append(lst)
   return groups
 
+# Maintains ordering, unlike list(set(...))
 def nub(lst):
   result = []
   for entry in lst:
