@@ -2,8 +2,6 @@
 
 from cryptoamino.analysis import characterisation
 
-print("Characterisation tests:")
-
 examples = [
   ("aaaaaaaa", 1.0000),
   ("whatawonderfulworld", 0.0468)

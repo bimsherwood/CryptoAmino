@@ -5,8 +5,6 @@ from cryptoamino.analysis import characterisation
 from cryptoamino.analysis import polyalphabetic
 from cryptoamino.cipher.vigenere import Vigenere
 
-print("Polyalphabetic analysis tests:")
-
   #
   # Test the likely substitution periods detector
   #

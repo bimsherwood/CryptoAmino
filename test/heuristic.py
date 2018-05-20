@@ -8,8 +8,6 @@ from cryptoamino.analysis import distribution
 from cryptoamino.cipher.vigenere import *
 from cryptoamino import tools
 
-print("Heuristic tests:")
-
   #
   # Brute Force test, using a cipher
   #

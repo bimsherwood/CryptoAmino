@@ -5,8 +5,6 @@ import random
 from cryptoamino.cipher import *
 from cryptoamino import tools
 
-print("Cipher tests:")
-
 # Get a random letter substitution
 shuffled_letters = list(tools.letters).copy()
 random.shuffle(shuffled_letters)
