@@ -1,6 +1,8 @@
 try:
   print("> Cipher tests:")
   import cryptoamino.test.ciphers
+  print("> Encoding tests:")
+  import cryptoamino.test.encoding
   print("> Heuristic tests:")
   import cryptoamino.test.heuristic
   print("> Characterisation tests:")

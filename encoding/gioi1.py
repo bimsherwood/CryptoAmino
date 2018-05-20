@@ -40,13 +40,9 @@ def decodeSecondPass(stream):
 
 class Gioi1:
   
-  # G.I.O.I. 1 is unkeyed
-  def key(self, key):
-    pass
-  
-  def encrypt(self, stream):
+  def encode(self, stream):
     return encodeSecondPass(encodeFirstPass(stream))
   
-  def decrypt(self, stream):
+  def decode(self, stream):
     return decodeFirstPass(decodeSecondPass(stream))
   
