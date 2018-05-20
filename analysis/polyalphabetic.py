@@ -5,6 +5,7 @@ from cryptoamino.analysis import characterisation
 # For substitutions that change periodically: Sort the periods from most to
 # least likely; most likely being those periods which produce the least uniform
 # symbol distribution.
+# See https://en.wikipedia.org/wiki/Index_of_coincidence#Example
 def likely_substitution_periods(sequence, min_period, max_period):
   symbols = list(sequence)
   period_scores = {} # Period vs. score dict
