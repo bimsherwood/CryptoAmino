@@ -19,9 +19,9 @@ class Vigenere:
   # repeat.
   def key(self, key):
     
-    def key_stream(teed_key):
+    def key_stream(key):
       key_buffer = []
-      for k in teed_key:
+      for k in key:
         key_buffer.append(k)
         yield k
       while True:
