@@ -3,8 +3,8 @@ from cryptoamino.encoding import *
 
 encodings = [
   
-  # G.I.O.I. 1 encoding
-  (gioi1.Gioi1(), "Some ascii text will do it!")
+  (gioi1.Gioi1(), "Some ascii text will do it!"),
+  (filesystem.FileSystem(), [b"File 1", b"File 2"])
   
 ]
 
