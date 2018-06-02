@@ -29,13 +29,13 @@ def quads(sequence):
     yield (a,b,c,x)
     a, b, c = (b, c, x)
 
-# Accepts a quadram frequency distribution (a quadruple vs. frequency
-# dictionary).
+# Accepts a quadram frequency distribution: A quadruple vs. frequency
+# dictionary. Note: The keys MUST be 4-tuples.
 # Returns a "scorer" function, which scores sequences of symbols. Higher scores
 # are given to sequences which contain more popular quadgrams.
 def quadgram_scorer(quadgram_freqs):
   
-  def quad_freq(quad):
+  def quad_freq(quad): # Prevents 0 frequencies
     return quadgram_freqs[quad] if quad in quadgram_freqs else 1
   
   sample_size = sum(quadgram_freqs.values())
