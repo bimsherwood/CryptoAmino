@@ -28,9 +28,9 @@ class Vigenere:
         for k in key_buffer:
           yield k
     
-    key1, key2 = itertools.tee(key)
-    self._encryption_key_stream = key_stream(key1)
-    self._decryption_key_stream = key_stream(key2)
+    key = list(key)
+    self._encryption_key_stream = key_stream(list(key))
+    self._decryption_key_stream = key_stream(list(key))
   
   def encrypt(self, stream):
     for symbol in stream:

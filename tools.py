@@ -47,7 +47,7 @@ def group(stream, size):
     group.append(symbol)
     if len(group) >= size:
       yield group
-      group.clear()
+      group = []
   if len(group) > 0:
     yield group
 
