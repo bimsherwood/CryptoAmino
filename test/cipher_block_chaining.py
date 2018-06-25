@@ -27,7 +27,8 @@ examples = [
   (bytearray([1,1,1,1,1,1,1,1]), bytearray([1,1,1,1,0,0,0,0,4,4,4,4]))]
 
 for ptxt, ctxt in examples:
-  null_cbc.key((None, iv))
+  null_cbc.key(None)
+  null_cbc.initialisation_vector(iv)
   ctxt_got = bytearray(null_cbc.encrypt(ptxt))
   if ctxt != ctxt_got:
     print(ptxt)
@@ -38,7 +39,8 @@ for ptxt, ctxt in examples:
 # Trial decryptions
 
 for ptxt_original, _ in examples:
-  null_cbc.key((None, iv))
+  null_cbc.key(None)
+  null_cbc.initialisation_vector(iv)
   ctxt = bytearray(null_cbc.encrypt(ptxt_original))
   ptxt_decrypted = bytearray(null_cbc.decrypt(ctxt))
   if ptxt_original != ptxt_decrypted:
@@ -52,7 +54,8 @@ globby_key = bytearray(32)
 globby_key[10] = 1
 globby_iv = bytearray(32)
 for ptxt_original, _ in examples:
-  globby_block_cbc.key((globby_key, globby_iv))
+  globby_block_cbc.key(globby_key)
+  globby_block_cbc.initialisation_vector(globby_iv)
   ctxt = bytearray(globby_block_cbc.encrypt(ptxt_original))
   ptxt_decrypted = bytearray(globby_block_cbc.decrypt(ctxt))
   if ptxt_original != ptxt_decrypted:

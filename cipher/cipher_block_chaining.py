@@ -56,9 +56,10 @@ class CipherBlockChaining:
     self.cipher = cipher
     self.block_size = block_size
   
-  def key(self, key_iv):
-    key, iv = key_iv
+  def key(self, key):
     self.cipher.key(key)
+  
+  def initialisation_vector(self, iv):
     self.iv = bytearray(iv)
   
   def encrypt(self, stream):
