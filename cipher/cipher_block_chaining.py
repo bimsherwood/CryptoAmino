@@ -7,7 +7,7 @@ import itertools
 from cryptoamino import tools
 
 # Block size is in bytes
-def pad_pkcs_7(stream, block_size):
+def pad_pkcs7(stream, block_size):
   block_length = 0
   for byte in stream:
     block_length += 1
@@ -21,7 +21,7 @@ class PaddingError(Exception):
     pass
 
 # Throws a PaddingError when the padding is incorrect
-def unpad_pkcs_7(stream, block_size):
+def unpad_pkcs7(stream, block_size):
   
   blocks = tools.group(stream, block_size)
   
@@ -62,7 +62,7 @@ class CipherBlockChaining:
     self.iv = bytearray(iv)
   
   def encrypt(self, stream):
-    padded = pad_pkcs_7(stream, self.block_size)
+    padded = pad_pkcs7(stream, self.block_size)
     state = bytearray(self.iv)
     while True:
       # Extract a block of plaintext
@@ -93,4 +93,4 @@ class CipherBlockChaining:
         yield plaintext_block
     
     plaintext = (byte for block in plaintext_blocks() for byte in block)
-    return unpad_pkcs_7(plaintext, self.block_size)
+    return unpad_pkcs7(plaintext, self.block_size)

@@ -50,8 +50,9 @@ for ptxt_original, _ in examples:
 globby_block_cbc = CipherBlockChaining(32, GlobbyBlock())
 globby_key = bytearray(32)
 globby_key[10] = 1
+globby_iv = bytearray(32)
 for ptxt_original, _ in examples:
-  globby_block_cbc.key((globby_key, iv))
+  globby_block_cbc.key((globby_key, globby_iv))
   ctxt = bytearray(globby_block_cbc.encrypt(ptxt_original))
   ptxt_decrypted = bytearray(globby_block_cbc.decrypt(ctxt))
   if ptxt_original != ptxt_decrypted:
