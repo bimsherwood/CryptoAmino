@@ -10,7 +10,7 @@ class FeedbackShiftRegister:
   # state bits, or the inverse thereof) then the feedback register is not
   # linear after all.
   def __init__(self, seed, f):
-    self.state = seed
+    self.state = list(seed)
     self.feedback_function = f
   
   # Shift the state, yield the rightmost value, and prepend the next feedback
