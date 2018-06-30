@@ -53,6 +53,8 @@ def quadgram_scorer(quadgram_freqs):
 
 # The probability that two distinct randomly-chosen symbols in the given
 # sequence are equal.
+# Note: The value is not 'normalised'. To normalise the IoC, multiply by the
+# number of possible, distinct symbols in the sequence.
 def index_of_coincidence(sequence):
   frequencies = distribution.freq(sequence)
   sample_size = sum(frequencies.values())
